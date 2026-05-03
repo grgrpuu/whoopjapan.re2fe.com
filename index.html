@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>抽選結果</title>
+
+<style>
+body{
+  margin:0;
+  background:#f4f4f4;
+  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  color:#222;
+}
+
+.container{
+  width:86%;
+  max-width:420px;
+  margin:0 auto;
+  padding-top:34px;
+  padding-bottom:40px;
+}
+
+.store-title{
+  text-align:center;
+  color:#d61f2c;
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:.2px;
+  margin-bottom:48px;
+}
+
+.page-title{
+  text-align:center;
+  font-size:32px;
+  font-weight:400;
+  margin-bottom:42px;
+}
+
+.win-box{
+  border:1px solid #d61f2c;
+  border-radius:4px;
+  color:#d61f2c;
+  text-align:center;
+  font-size:24px;
+  font-weight:700;
+  padding:18px 0;
+  margin-bottom:26px;
+}
+
+.event-title{
+  color:#1567f2;
+  font-size:34px;
+  font-weight:700;
+  line-height:1.25;
+  margin-bottom:34px;
+}
+
+.name{
+  font-size:38px;
+  font-weight:700;
+  margin-bottom:34px;
+}
+
+.info-row{
+  display:flex;
+  font-size:26px;
+  color:#666;
+  margin-bottom:18px;
+  line-height:1.35;
+}
+
+.label{
+  width:142px;
+  flex-shrink:0;
+}
+
+.value{
+  flex:1;
+}
+
+.center-note{
+  text-align:center;
+  color:#666;
+  font-size:24px;
+  line-height:1.7;
+  margin:54px 0 34px;
+}
+
+.date{
+  text-align:center;
+  color:#ef5f8c;
+  font-size:24px;
+  font-weight:700;
+  margin-bottom:28px;
+}
+
+.sub-note{
+  text-align:center;
+  color:#666;
+  font-size:22px;
+  line-height:1.6;
+  margin-bottom:38px;
+}
+
+.confirm-btn{
+  width:100%;
+  border:none;
+  border-radius:4px;
+  background:#cfcfcf;
+  color:#000;
+  font-size:34px;
+  font-weight:700;
+  padding:22px 0;
+  cursor:pointer;
+  transition:.15s;
+}
+
+.confirm-btn.used{
+  background:#d61f2c;
+  color:#fff;
+}
+
+.result-link{
+  display:block;
+  text-align:center;
+  color:#2d8cff;
+  font-size:24px;
+  text-decoration:none;
+  margin-top:36px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="store-title">Whoop Japan Store</div>
+
+  <div class="page-title">抽選結果</div>
+
+  <div class="win-box">当選しました</div>
+
+  <div class="event-title">個別ハイタッチ会【THEO】</div>
+
+  <div class="name">有吉 美佐子 様</div>
+
+  <div class="info-row">
+    <div class="label">イベント：</div>
+    <div class="value">[P1Harmony] 5/30(土)東京2部</div>
+  </div>
+
+  <div class="info-row">
+    <div class="label">応募コード：</div>
+    <div class="value">019d5178-c7e8-7780-8c27-4e3695922b42</div>
+  </div>
+
+  <div class="center-note">
+    こちらの画面をスマートフォンで<br>
+    ブックマークすることをおすすめします。
+  </div>
+
+  <div class="date">表示開始時刻（01/01 00:00）予定</div>
+
+  <div class="sub-note">
+    時刻が未定の場合もございます。開催日時はイベント詳細ページをご確認ください。
+  </div>
+
+  <button id="confirmBtn" class="confirm-btn">
+    確認
+  </button>
+
+  <a href="result-list.html" class="result-link">抽選結果一覧へ</a>
+
+</div>
+
+<script>
+const btn = document.getElementById('confirmBtn');
+
+btn.addEventListener('click', function(){
+  btn.classList.add('used');
+  btn.textContent = '使用済み';
+});
+</script>
+
+</body>
+</html>
