@@ -75,10 +75,12 @@ body{
 
 .label{
   width:100px;
+　flex-shrink:0;
   white-space:nowrap;
 }
 
-.value{
+.code-value span{
+  display:block;
   flex:1;
   word-break:break-word;
 }
@@ -175,7 +177,10 @@ body{
 
 <div class="info-row">
   <div class="label">応募コード：</div>
-  <div class="value code-value">019d5178-c7e8-7780-8c27-4e3695922b42</div>
+  <div class="value code-value">
+    <span>019d5178-c7e8-7780-8c27-</span>
+    <span>4e3695922b42</span>
+  </div>
 </div>
 
   <div class="note">
