@@ -9,9 +9,10 @@
             --bg-color: #f9f9f9;
             --text-main: #333;
             --text-sub: #888;
-            --card-bg: #fdf2f2; /* 薄いピンクベージュ */
-            --border-radius: 8px;
-            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --text-gray: #666; /* ご指定のカラー */
+            --card-bg: #fdf2f2;
+            --border-radius: 6px; /* 少しシャープに */
+            --shadow: 0 2px 4px rgba(0,0,0,0.08);
         }
 
         body {
@@ -19,7 +20,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -27,56 +28,58 @@
 
         .container {
             width: 100%;
-            max-width: 500px;
+            max-width: 400px; /* 全体的に少し絞りました */
             text-align: center;
         }
 
         /* ヘッダー部分 */
         .store-name {
-            color: #e60012; /* 赤色 */
-            font-size: 1.5rem;
+            color: #e60012;
+            font-size: 1.3rem; /* サイズダウン */
             font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .page-title {
-            font-size: 1.3rem;
-            color: #444;
             margin-bottom: 15px;
         }
 
-        .instruction {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 25px;
+        .page-title {
+            font-size: 1.1rem; /* サイズダウン */
+            color: #444;
+            margin-bottom: 10px;
         }
 
-        /* セレクトボックス */
+        .instruction {
+            font-size: 0.8rem; /* サイズダウン */
+            color: var(--text-gray);
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        /* セレクトボックス (修正1) */
         .event-selector {
             width: 100%;
-            padding: 12px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
+            padding: 8px 10px; /* 余白を小さく */
+            font-size: 0.9rem; /* 文字を小さく */
+            border: 1px solid #ddd;
             border-radius: 4px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             background-color: #fff;
+            color: var(--text-gray); /* #666に設定 */
         }
 
-        /* 抽選結果カード */
+        /* 抽選結果リスト */
         .result-list {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px; /* 間隔を詰める */
         }
 
+        /* 抽選結果カード (修正2) */
         .result-item {
             display: flex;
             align-items: center;
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 15px;
-            text-decoration: none; /* リンクの下線を消す */
+            padding: 10px 12px; /* 上下左右の余白を縮小 */
+            text-decoration: none;
             color: inherit;
             box-shadow: var(--shadow);
             position: relative;
@@ -84,43 +87,47 @@
         }
 
         .result-item:active {
-            transform: scale(0.98); /* タップ時に少し沈む演出 */
+            transform: scale(0.98);
         }
 
         /* 「未使用」スタンプ */
         .status-badge {
             background-color: #e5989b;
             color: white;
-            font-size: 0.7rem;
-            padding: 2px 8px;
+            font-size: 0.6rem; /* 小さく */
+            padding: 1px 6px;
             border-radius: 10px;
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 6px;
+            left: 6px;
         }
 
         .check-icon {
-            width: 40px;
-            height: 40px;
-            border: 2px solid #ddd;
+            width: 32px; /* 小さく */
+            height: 32px; /* 小さく */
+            border: 2px solid #e0e0e0;
             border-radius: 50%;
-            margin-right: 15px;
+            margin-right: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #ddd;
-            font-size: 1.2rem;
+            font-size: 1rem;
+            flex-shrink: 0;
         }
 
         /* コンテンツ部分 */
         .content {
             flex-grow: 1;
             text-align: left;
+            overflow: hidden;
         }
 
         .label {
             font-weight: bold;
-            margin-bottom: 5px;
+            font-size: 0.85rem; /* 文字サイズダウン */
+            margin-bottom: 2px;
+            white-space: nowrap;
         }
 
         .label-blue { color: #007bff; }
@@ -128,16 +135,18 @@
         .label-red { color: #dc3545; }
 
         .uuid {
-            font-size: 0.75rem;
+            font-size: 0.65rem; /* UUIDをさらに小さく */
             color: var(--text-sub);
             word-break: break-all;
+            display: block;
         }
 
         /* 矢印アイコン */
         .arrow {
-            color: #666;
-            font-size: 1.5rem;
-            margin-left: 10px;
+            color: #999;
+            font-size: 1.1rem; /* 小さく */
+            margin-left: 5px;
+            flex-shrink: 0;
         }
 
     </style>
@@ -162,7 +171,7 @@
             <div class="check-icon">✓</div>
             <div class="content">
                 <div class="label">当選：<span class="label-blue">個別ハイタッチ会【THEO】</span></div>
-                <div class="uuid">019d5178-c7e8-7780-8c27-4e3695922b42</div>
+                <span class="uuid">019d5178-c7e8-7780-8c27-4e3695922b42</span>
             </div>
             <div class="arrow">＞</div>
         </a>
@@ -172,7 +181,7 @@
             <div class="check-icon">✓</div>
             <div class="content">
                 <div class="label">当選：<span class="label-green">個別ハイタッチ会【INTAK】</span></div>
-                <div class="uuid">019d515c-1584-774a-9eaf-3812d8cacae7</div>
+                <span class="uuid">019d515c-1584-774a-9eaf-3812d8cacae7</span>
             </div>
             <div class="arrow">＞</div>
         </a>
@@ -182,7 +191,7 @@
             <div class="check-icon">✓</div>
             <div class="content">
                 <div class="label">当選：<span class="label-red">個別フォトカードお渡し会【KEEHO】</span></div>
-                <div class="uuid">019d533b-f74c-71b0-8beb-a0871ba2bf75</div>
+                <span class="uuid">019d533b-f74c-71b0-8beb-a0871ba2bf75</span>
             </div>
             <div class="arrow">＞</div>
         </a>
