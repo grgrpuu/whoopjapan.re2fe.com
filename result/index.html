@@ -9,9 +9,9 @@
             --bg-color: #f9f9f9;
             --text-main: #333;
             --text-sub: #888;
-            --text-gray: #666; /* ご指定のカラー */
+            --text-gray: #666;
             --card-bg: #fdf2f2;
-            --border-radius: 6px; /* 少しシャープに */
+            --border-radius: 6px;
             --shadow: 0 2px 4px rgba(0,0,0,0.08);
         }
 
@@ -28,57 +28,53 @@
 
         .container {
             width: 100%;
-            max-width: 400px; /* 全体的に少し絞りました */
+            max-width: 400px;
             text-align: center;
         }
 
-        /* ヘッダー部分 */
         .store-name {
             color: #e60012;
-            font-size: 1.3rem; /* サイズダウン */
+            font-size: 1.3rem;
             font-weight: bold;
             margin-bottom: 15px;
         }
 
         .page-title {
-            font-size: 1.1rem; /* サイズダウン */
+            font-size: 1.1rem;
             color: #444;
             margin-bottom: 10px;
         }
 
         .instruction {
-            font-size: 0.8rem; /* サイズダウン */
+            font-size: 0.8rem;
             color: var(--text-gray);
             line-height: 1.4;
             margin-bottom: 20px;
         }
 
-        /* セレクトボックス (修正1) */
         .event-selector {
             width: 100%;
-            padding: 8px 10px; /* 余白を小さく */
-            font-size: 0.9rem; /* 文字を小さく */
+            padding: 8px 10px;
+            font-size: 0.9rem;
             border: 1px solid #ddd;
             border-radius: 4px;
             margin-bottom: 20px;
             background-color: #fff;
-            color: var(--text-gray); /* #666に設定 */
+            color: var(--text-gray);
         }
 
-        /* 抽選結果リスト */
         .result-list {
             display: flex;
             flex-direction: column;
-            gap: 10px; /* 間隔を詰める */
+            gap: 10px;
         }
 
-        /* 抽選結果カード (修正2) */
         .result-item {
             display: flex;
             align-items: center;
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 10px 12px; /* 上下左右の余白を縮小 */
+            padding: 12px 12px 10px 12px;
             text-decoration: none;
             color: inherit;
             box-shadow: var(--shadow);
@@ -86,48 +82,46 @@
             transition: transform 0.1s;
         }
 
-        .result-item:active {
-            transform: scale(0.98);
-        }
-
-        /* 「未使用」スタンプ */
         .status-badge {
             background-color: #e5989b;
             color: white;
-            font-size: 0.6rem; /* 小さく */
+            font-size: 0.6rem;
             padding: 1px 6px;
             border-radius: 10px;
             position: absolute;
-            top: 6px;
-            left: 6px;
+            top: 5px;
+            left: 5px;
+            z-index: 2;
         }
 
+        /* 修正：丸はグレー、チェックはボタンの背景色と同じピンクベージュ */
         .check-icon {
-            width: 32px; /* 小さく */
-            height: 32px; /* 小さく */
-            border: 2px solid #e0e0e0;
+            width: 32px;
+            height: 32px;
+            background-color: #ddd;
             border-radius: 50%;
             margin-right: 12px;
+            margin-top: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ddd;
-            font-size: 1rem;
+            color: var(--card-bg);
+            font-size: 1.2rem;
+            font-weight: bold;
             flex-shrink: 0;
         }
 
-        /* コンテンツ部分 */
         .content {
             flex-grow: 1;
             text-align: left;
-            overflow: hidden;
+            margin-top: 5px;
         }
 
         .label {
             font-weight: bold;
-            font-size: 0.85rem; /* 文字サイズダウン */
+            font-size: 0.85rem;
             margin-bottom: 2px;
-            white-space: nowrap;
+            display: block;
         }
 
         .label-blue { color: #007bff; }
@@ -135,20 +129,18 @@
         .label-red { color: #dc3545; }
 
         .uuid {
-            font-size: 0.65rem; /* UUIDをさらに小さく */
+            font-size: 0.7rem;
             color: var(--text-sub);
-            word-break: break-all;
+            line-height: 1.2;
             display: block;
         }
 
-        /* 矢印アイコン */
         .arrow {
             color: #999;
-            font-size: 1.1rem; /* 小さく */
+            font-size: 1.1rem;
             margin-left: 5px;
             flex-shrink: 0;
         }
-
     </style>
 </head>
 <body>
@@ -170,8 +162,8 @@
             <span class="status-badge">未使用</span>
             <div class="check-icon">✓</div>
             <div class="content">
-                <div class="label">当選：<span class="label-blue">個別ハイタッチ会【THEO】</span></div>
-                <span class="uuid">019d5178-c7e8-7780-8c27-4e3695922b42</span>
+                <span class="label">当選：<span class="label-blue">個別ハイタッチ会【THEO】</span></span>
+                <span class="uuid">019d5178-c7e8-7780-8c27-<br>4e3695922b42</span>
             </div>
             <div class="arrow">＞</div>
         </a>
@@ -180,8 +172,8 @@
             <span class="status-badge">未使用</span>
             <div class="check-icon">✓</div>
             <div class="content">
-                <div class="label">当選：<span class="label-green">個別ハイタッチ会【INTAK】</span></div>
-                <span class="uuid">019d515c-1584-774a-9eaf-3812d8cacae7</span>
+                <span class="label">当選：<span class="label-green">個別ハイタッチ会【INTAK】</span></span>
+                <span class="uuid">019d515c-1584-774a-9eaf-<br>3812d8cacae7</span>
             </div>
             <div class="arrow">＞</div>
         </a>
@@ -190,8 +182,8 @@
             <span class="status-badge">未使用</span>
             <div class="check-icon">✓</div>
             <div class="content">
-                <div class="label">当選：<span class="label-red">個別フォトカードお渡し会【KEEHO】</span></div>
-                <span class="uuid">019d533b-f74c-71b0-8beb-a0871ba2bf75</span>
+                <span class="label">当選：<span class="label-red">個別フォトカードお渡し会【KEEHO】</span></span>
+                <span class="uuid">019d533b-f74c-71b0-8beb-<br>a0871ba2bf75</span>
             </div>
             <div class="arrow">＞</div>
         </a>
