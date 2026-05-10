@@ -66,6 +66,7 @@ body{
 
 .info-row{
   display:flex;
+  align-items:flex-start;  
   font-size:14px;
   color:#666;
   line-height:1.55;
@@ -73,14 +74,20 @@ body{
 }
 
 .label{
-  width:70px;
-  flex-shrink:0;
+  width:100px;
+  white-space:nowrap;
 }
 
 .value{
   flex:1;
+  word-break:break-word;
 }
 
+.code-value{
+  white-space:nowrap;
+  font-size:14px;
+}
+      
 .note{
   text-align:center;
   color:#666;
@@ -152,10 +159,10 @@ body{
     <div class="value">[P1Harmony] 5/30(土)東京2部</div>
   </div>
 
-  <div class="info-row">
-    <div class="label">応募コード：</div>
-    <div class="value">019d5178-c7e8-7780-8c27-4e3695922b42</div>
-  </div>
+<div class="info-row">
+  <div class="label">応募コード：</div>
+  <div class="value code-value">019d5178-c7e8-7780-8c27-4e3695922b42</div>
+</div>
 
   <div class="note">
     こちらの画面をスマートフォンで<br>
