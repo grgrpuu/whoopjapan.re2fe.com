@@ -113,7 +113,7 @@
   color:#666;
   font-size:14px;
   line-height:1.7;
-  margin-bottom:13px;
+  margin-bottom:18px;
 }
 
 .confirm-btn{
@@ -133,24 +133,40 @@
   gap:14px;
 }
 
-.check-circle{
-  width:32px;
-  height:32px;
-  border:2px solid #fff;
-  border-radius:50%;
+.check-circle {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+    
+.check-circle::after {
+            content: "";
+            position: absolute;
+            left: 12px; /* 位置の微調整 */
+            top: 6px;  /* 位置の微調整 */
+            width: 10px;  /* 短い方の線の長さ */
+            height: 22px; /* 長い方の線の長さ */
+            border: solid #0f8a83; /* ボタンの背景色と同じ色にする */
+            border-width: 0 1.8px 1.8px 0; /* 線の太さ */
+            transform: rotate(45deg); /* 傾けてチェックにする */
+        }
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    .btn-label {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
 
-  font-size:23px;
-  line-height:1;
-  color:#fff;
+.confirm-btn.used {
+    background-color: #87edad !important; /* 指定の薄い青緑色 */
 }
 
-.confirm-btn.used{
-  background:#d7192d;
-  color:#fff;
+/* チェックマークの色も同じ色に合わせる */
+.confirm-btn.used .check-circle::after {
+    border-color: #87edad !important;
 }
 
 .result-link{
@@ -216,7 +232,7 @@
   </div>
 
  <button id="confirmBtn" class="confirm-btn">
-  <span class="check-circle">✓</span>
+  <div class="check-circle"></div>
   <span class="btn-label">使用する</span>
  </button>
 
