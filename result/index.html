@@ -51,18 +51,44 @@
             width: 100%;
         }
 
-        .event-selector {
-            width: 100%;
-            padding: 15px 10px;
-            font-size: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 25px;
-            background-color: #fff;
-            color: #666;
-            box-sizing: border-box;
-        }
+        
+        /* --- セレクトボックスの矢印を自作する --- */
+.event-selector {
+    appearance: none;         /* デフォルトの矢印を消す */
+    -webkit-appearance: none; /* Safari/Chrome用 */
+    -moz-appearance: none;    /* Firefox用 */
+    
+    width: 100%;
+    padding: 15px 40px 15px 10px; /* 右側に矢印用の余白を作る */
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    color: #666;
+    box-sizing: border-box;
 
+    /* 自作の矢印を背景として入れる */
+    background-image: linear-gradient(45deg, transparent 50%, #999 50%), 
+                      linear-gradient(135deg, #999 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), 
+                         calc(100% - 15px) calc(1em + 2px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+}
+
+/* --- リストの矢印 (arrow) の角度を調整 --- */
+.arrow {
+    width: 10px;  /* サイズ固定 */
+    height: 10px; /* サイズ固定 */
+    border-top: 2px solid #999;    /* 上の線 */
+    border-right: 2px solid #999;  /* 右の線 */
+    transform: rotate(45deg);      /* 45度回転させて「＞」にする */
+    margin-left: auto;             /* 右端に寄せる */
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+        
         .result-list {
             width: 100%;
             display: flex;
@@ -146,18 +172,11 @@
             margin-top: 6px;
         }
 
-        .arrow {
-            color: #999;
-            font-size: 18px;
-            margin-left: 5px;
-            flex-shrink: 0;
-        }
-
         .footer {
             text-align: center;
             margin-top: 55px;
             color: #9a9a9a;
-            font-size: 12px;
+            font-size: 14.5px;
             width: 100%;
         }
     </style>
@@ -185,7 +204,7 @@
                 <span class="label-text">当選：<span class="label-blue">個別サイン会</span><br><span class="label-blue">【THEO】</span></span>
                 <span class="uuid">019d5178-c7e8-7780-8c27-<br>4e3695922b42</span>
             </div>
-            <div class="arrow">＞</div>
+            <div class="arrow"></div>
         </a>
 
         <a href="https://whoopjapan-re2fe-com.nomorepeanu2.workers.dev/4/" class="result-item">
@@ -195,7 +214,7 @@
                 <span class="label-text">当選：<span class="label-green">個別フォトカードお渡し会</span><br><span class="label-green">【INTAK】</span></span>
                 <span class="uuid">019d515c-1584-774a-9eaf-<br>3812d8cacae7</span>
             </div>
-            <div class="arrow">＞</div>
+            <div class="arrow"></div>
         </a>
 
         <a href="https://whoopjapan-re2fe-com.nomorepeanu2.workers.dev/1/" class="result-item">
@@ -205,7 +224,7 @@
                 <span class="label-text">当選：<span class="label-red">個別サイン会</span><br><span class="label-red">【KEEHO】</span></span>
                 <span class="uuid">019d533b-f74c-71b0-8beb-<br>a0871ba2bf75</span>
             </div>
-            <div class="arrow">＞</div>
+            <div class="arrow"></div>
         </a>
 
         <a href="https://whoopjapan-re2fe-com.nomorepeanu2.workers.dev/5/" class="result-item">
@@ -215,7 +234,7 @@
                 <span class="label-text">当選：<span class="label-js">個別フォトカードお渡し会</span><br><span class="label-js">【JONGSEOB】</span></span>
                 <span class="uuid">019d533b-f74c-71b0-8beb-<br>a0871ba2bf75</span>
             </div>
-            <div class="arrow">＞</div>
+            <div class="arrow"></div>
         </a>
 
         <a href="https://whoopjapan-re2fe-com.nomorepeanu2.workers.dev/5/sign" class="result-item">
@@ -225,7 +244,7 @@
                 <span class="label-text">当選：<span class="label-js">個別サイン会</span><br><span class="label-js">【JONGSEOB】</span></span>
                 <span class="uuid">019d533b-f74c-71b0-8beb-<br>a0871ba2bf75</span>
             </div>
-            <div class="arrow">＞</div>
+            <div class="arrow"></div>
         </a>
 
         <a href="https://whoopjapan-re2fe-com.nomorepeanu2.workers.dev/3/" class="result-item">
@@ -235,7 +254,7 @@
                 <span class="label-text">当選：<span class="label-jw">個別フォトカードお渡し会</span><br><span class="label-jw">【JIUNG】</span></span>
                 <span class="uuid">019d533b-f74c-71b0-8beb-<br>a0871ba2bf75</span>
             </div>
-            <div class="arrow">＞</div>
+            <div class="arrow"></div>
         </a>
 
         <a href="https://whoopjapan-re2fe-com.nomorepeanu2.workers.dev/2/pc" class="result-item">
@@ -245,7 +264,7 @@
                 <span class="label-text">当選：<span class="label-blue">個別フォトカードお渡し会</span><br><span class="label-blue">【THEO】</span></span>
                 <span class="uuid">019d533b-f74c-71b0-8beb-<br>a0871ba2bf75</span>
             </div>
-            <div class="arrow">＞</div>
+            <div class="arrow"></div>
         </a>
     </div> <div class="footer">© 2026 RENI Inc.</div>
 </div> </body>
